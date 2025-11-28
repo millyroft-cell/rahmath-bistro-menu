@@ -491,7 +491,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
             <p class="text-lg font-semibold menu-title mb-2 text-accent">Restoran Rahmath Bistro</p>
             <p class="text-sm text-yellow-300">&copy; 2024. Hak Cipta Terpelihara. | <a href="#" class="underline hover:opacity-80">Lawati Laman Web Kami</a></p>
-            <p class="text-xs mt-2 text-yellow-300">123 Culinary Way, Flavor Town, CA 90210 | (555) 555-GRIL</p>
+            <p class="text-xs mt-2 text-yellow-300">No59-G Jalan Pulau Lumut P U10/P Alam Budiman 40150 Selangor | 0378319466 </p>
         </div>
     </footer>
 
