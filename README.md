@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -137,7 +136,7 @@
         <!-- Menu Content Sections (Tab Panes) -->
         <div id="menu-content">
             
-            <!-- Nasi Lemak Section (JANGAN TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Nasi Lemak Section (Ditetapkan sebagai aktif secara lalai) -->
             <section id="nasi-lemak" class="tab-content mb-16">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Nasi Lemak</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -172,7 +171,7 @@
                 </div>
             </section>
             
-            <!-- Roti Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Roti Section -->
             <section id="roti" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Roti</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -207,7 +206,7 @@
                 </div>
             </section>
             
-            <!-- Nasi Goreng Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Nasi Goreng Section -->
             <section id="nasi-goreng" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Nasi Goreng</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -242,7 +241,7 @@
                 </div>
             </section>
 
-            <!-- Naan Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Naan Section -->
             <section id="naan" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Naan</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -291,7 +290,7 @@
                 </div>
             </section>
             
-            <!-- Thai Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Thai Section -->
             <section id="thai" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Thai</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -326,7 +325,7 @@
                 </div>
             </section>
 
-            <!-- Western Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Western Section -->
             <section id="western" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Western</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -361,7 +360,7 @@
                 </div>
             </section>
             
-            <!-- Rojak Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Rojak Section -->
             <section id="rojak" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Rojak</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -396,7 +395,7 @@
                 </div>
             </section>
 
-            <!-- Minuman Section (TAMBAH CLASS 'hidden' DI SINI) -->
+            <!-- Minuman Section -->
             <section id="minuman" class="tab-content mb-16 hidden">
                 <h3 class="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-primary text-primary menu-title">Minuman</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -491,7 +490,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
             <p class="text-lg font-semibold menu-title mb-2 text-accent">Restoran Rahmath Bistro</p>
             <p class="text-sm text-yellow-300">&copy; 2024. Hak Cipta Terpelihara. | <a href="#" class="underline hover:opacity-80">Lawati Laman Web Kami</a></p>
-            <p class="text-xs mt-2 text-yellow-300">No59-G Jalan Pulau Lumut P U10/P Alam Budiman 40150 Selangor | 0378319466 </p>
+            <p class="text-xs mt-2 text-yellow-300">123 Culinary Way, Flavor Town, CA 90210 | (555) 555-GRIL</p>
         </div>
     </footer>
 
@@ -537,6 +536,7 @@
             // Pastikan API Key wujud sebelum membuat panggilan
             if (API_KEY === "") {
                  console.warn("API Key is missing. Skipping image generation.");
+                 // Fallback: Replace placeholder color with a food-safe color and add a label
                  imgElement.src = imgElement.src.replace('cccccc/000000', 'FFC107/333333').replace('...', 'N/A');
                  imgElement.classList.remove('loading-image');
                  return;
@@ -628,13 +628,13 @@
                 });
             });
 
-            // Sila pastikan bahagian 'nasi-lemak' sudah kelihatan secara lalai (tiada kelas 'hidden' dalam HTML)
-            // Lakukan panggilan `switchTab` untuk memastikan tab butang diserlahkan dengan betul.
+            // STARTUP FIX: Pastikan tab butang yang betul diserlahkan dan kandungan dipaparkan
             const initialTab = document.querySelector('.tab-button.active');
             if (initialTab) {
+                // Gunakan tab yang mempunyai kelas 'active' di HTML (Nasi Lemak)
                 switchTab(initialTab.getAttribute('data-tab'));
             } else if (tabButtons.length > 0) {
-                // Jika tiada yang aktif, tetapkan yang pertama
+                // Jika tiada yang aktif (sepatutnya tidak berlaku dengan kod ini), tetapkan yang pertama
                 tabButtons[0].classList.add('active');
                 switchTab(tabButtons[0].getAttribute('data-tab'));
             }
